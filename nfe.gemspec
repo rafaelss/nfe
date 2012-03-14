@@ -14,4 +14,6 @@ Gem::Specification.new do |gem|
   gem.name          = "nfe"
   gem.require_paths = ["lib"]
   gem.version       = Nfe::VERSION
+
+  gem.add_development_dependency "rspec", "~> 2.8.0"
 end
