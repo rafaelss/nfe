@@ -4,7 +4,302 @@
 # loaded once.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+require "bundler/setup"
+require "nfe"
+require "nokogiri"
+require "active_support/core_ext/string"
+
+module NfeXmlComparator
+  def xml(tag, str = nil)
+    str ||= File.read(File.expand_path("../fixtures/nfe.xml", __FILE__))
+    doc = Nokogiri::XML(str) do |config|
+      config.noblanks
+    end
+    return doc.at(tag).to_xml if tag
+    doc.to_xml
+  end
+end
+
+module Nfe::Template
+  module TestHelpers
+    def icms00
+      new_view(:icms00)
+    end
+
+    def icms
+      new_view(:icms) do |v|
+        v.icms00 = icms00
+      end
+    end
+
+    def ipi
+      new_view(:ipi) do |v|
+        v.ipint = ipint
+      end
+    end
+
+    def ipint
+      new_view(:ipint)
+    end
+
+    def pis
+      new_view(:pis) do |v|
+        v.pis_aliq = pis_aliq
+      end
+    end
+
+    def pis_aliq
+      new_view(:pis_aliq) do |v|
+        v.cst = "01"
+        v.v_bc = 883.12
+        v.p_pis = 1.65
+        v.v_pis = 14.57
+      end
+    end
+
+    def dest
+      new_view(:dest) do |v|
+        v.cnpj = "02536490000170"
+        v.x_nome = "WARDY CONFECCOES LTDA"
+        v.ie = "115399484115"
+        v.email = "wardy@wardy.com.br"
+        v.ender_dest = ender_dest
+      end
+    end
+
+    def ender_dest
+      new_view(:ender_dest) do |v|
+        v.x_lgr = "RUA PARAIBA"
+        v.nro = "73"
+        v.x_bairro = "BRAS"
+        v.c_mun = "3550308"
+        v.x_mun = "Sao Paulo"
+        v.uf = "SP"
+        v.cep = "03013030"
+        v.c_pais = "1058"
+        v.x_pais = "BRASIL"
+        v.fone = "1122910590"
+      end
+    end
+
+    def det
+      new_view(:det) do |v|
+        v.inf_ad_prod = "BLUE HEAVEN F01946 LOTE XXXX"
+        v.prod = prod
+        v.imposto = imposto
+      end
+    end
+
+    def imposto
+      new_view(:imposto) do |v|
+        v.icms = icms
+        v.ipi = ipi
+        v.pis = pis
+        v.cofins = cofins
+      end
+    end
+
+    def cofins
+      new_view(:cofins) do |v|
+        v.cofins_aliq = cofins_aliq
+      end
+    end
+
+    def cofins_aliq
+      new_view(:cofins_aliq) do |v|
+        v.cst = "01"
+        v.v_bc = 883.12
+        v.p_cofins = 7.6
+        v.v_cofins = 67.11
+      end
+    end
+
+    def cobr
+      new_view(:cobr) do |v|
+        v.fat = fat
+        v.dup = dup
+      end
+    end
+
+    def dup
+      new_view(:dup) do |v|
+        v.n_dup = "0001-1"
+        v.d_venc = "2010-12-20"
+        v.v_dup = 883.12
+      end
+    end
+
+    def inf_nfe
+      new_view(:inf_nfe) do |v|
+        v.id = "NFe35101158716523000119550010000000011003000000"
+        v.ide = ide
+        v.emit = emit
+        v.dest = dest
+        v.det = det
+        v.total = total
+        v.transp = transp
+        v.cobr = cobr
+        v.inf_adic = inf_adic
+      end
+    end
+
+    def fat
+      new_view(:fat)
+    end
+
+    def prod
+      new_view(:prod) do |v|
+        v.c_prod = "2470BCB90"
+        v.c_ean = nil
+        v.x_prod = "DELFOS SND TINTO COM AMACIANTE SO TECIDO 1,80M"
+        v.n_cm = 60063200
+        v.c_fop = 5122
+        v.u_com = "KG"
+        v.q_com = 46.4800
+        v.v_uncom = 19.0000000000
+        v.v_prod = 833.12
+        v.c_eantrib = nil
+        v.u_trib = "KG"
+        v.q_trib = 46.4800
+        v.v_untrib = 19.0000000000
+        v.i_ndtot = 1
+        v.x_ped = 060110-1030
+        v.n_itemped = 1
+      end
+    end
+
+    def root
+      new_view(:root) do |v|
+        v.inf_nfe = inf_nfe
+      end
+    end
+
+    def emit
+      new_view(:emit) do |v|
+        v.cnpj = "58716523000119"
+        v.x_nome = "FIMATEC TEXTIL LTDA"
+        v.x_fant = "FIMATEC"
+        v.ender_emit = ender_emit
+        v.ie = "112006603110"
+        v.im = "95095870"
+        v.cnae = "0131380"
+        v.crt = 3
+      end
+    end
+
+    def ender_emit
+      new_view(:ender_emit) do |v|
+        v.x_lgr = "RUA DOS PATRIOTAS"
+        v.nro = 897
+        v.x_cpl = "ARMAZEM 42"
+        v.x_bairro = "IPIRANGA"
+        v.c_mun = 3550308
+        v.x_mun = "Sao Paulo"
+        v.uf = "SP"
+        v.cep = "04207040"
+        v.c_pais = 1058
+        v.x_pais = "BRASIL"
+        v.fone = "1120677300"
+      end
+    end
+
+    def ide
+      new_view(:ide) do |v|
+        v.c_uf = 35
+        v.c_nf = "00300000"
+        v.nat_op = "VENDA"
+        v.ind_pag = 0
+        v.mod = 55
+        v.serie = 1
+        v.n_nf = 1
+        v.d_emi = "2010-11-02"
+        v.tp_nf = 1
+        v.c_mun_fg = 3550308
+        v.tp_imp = 1
+        v.tp_emis = 1
+        v.c_dv = 0
+        v.tp_amb = 2
+        v.fin_nfe = 1
+        v.proc_emi = 3
+        v.ver_proc = "2.0.3"
+      end
+    end
+
+    def total
+      new_view(:total) do |v|
+        v.icms_tot = icms_tot
+      end
+    end
+
+    def icms_tot
+      new_view(:icms_tot) do |v|
+        v.v_bc = 588.78
+        v.v_icms = 105.98
+        v.v_bcst = 0.00
+        v.v_st = 0.00
+        v.v_prod = 833.12
+        v.v_frete = 0.00
+        v.v_seg = 0.00
+        v.v_desc = 0.00
+        v.v_ii = 0.00
+        v.v_ipi = 0.00
+        v.v_pis = 14.57
+        v.v_cofins = 67.11
+        v.v_outro = 0.00
+        v.v_nf = 833.12
+      end
+    end
+
+    def transp
+      new_view(:transp) do |v|
+        v.mod_frete = 1
+        v.transporta = transporta
+        v.vol = vol
+      end
+    end
+
+    def transporta
+      new_view(:transporta) do |v|
+        v.x_nome = "RETIRA"
+      end
+    end
+
+    def vol
+      new_view(:vol) do |v|
+        v.q_vol = 3
+        v.esp = "VOLUMES"
+        v.peso_l = 46.480
+        v.peso_b = 50.000
+      end
+    end
+
+    def inf_adic
+      new_view(:inf_adic) do |v|
+        v.inf_ad_fisco = "EMITIDO NOS TERMOS DO ARTIGO 400-C DO DECRETO 48042/03 SAIDA COM SUSPENSAO DO IPI CONFORME ART 29 DA LEI 10.637"
+        v.obs_cont = obs_cont
+      end
+    end
+
+    def obs_cont
+      new_view(:obs_cont) do |v|
+        v.x_texto = "roberto@fimatec.com.br"
+      end
+    end
+
+    private
+
+    def new_view(name)
+      klass = "Nfe::Template::#{name.to_s.classify}".constantize
+      v = klass.new
+      yield v if block_given?
+      v
+    end
+  end
+end
+
 RSpec.configure do |config|
+  config.include NfeXmlComparator
+  config.include Nfe::Template::TestHelpers
   config.treat_symbols_as_metadata_keys_with_true_values = true
   config.run_all_when_everything_filtered = true
   config.filter_run :focus

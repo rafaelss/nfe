@@ -15,5 +15,8 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = Nfe::VERSION
 
+  gem.add_dependency "mustache", "~> 0.99.4"
+
   gem.add_development_dependency "rspec", "~> 2.8.0"
+  gem.add_development_dependency "nokogiri", "~> 1.5.2"
 end
