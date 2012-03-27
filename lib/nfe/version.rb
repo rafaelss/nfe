@@ -1,3 +1,3 @@
 module Nfe
-  VERSION = "0.0.2a"
+  VERSION = "0.0.3a"
 end
