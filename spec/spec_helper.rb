@@ -287,6 +287,7 @@ module Nfe::Template
 
     def obs_cont
       new_view(:obs_cont) do |v|
+        v.x_campo = "EMAIL"
         v.x_texto = "roberto@fimatec.com.br"
       end
     end
