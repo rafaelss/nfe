@@ -2,7 +2,7 @@ module Nfe
   module Template
     class CofinsAliq < Base
       attr_accessor :cst
-      attr_accessor :v_bc, :p_cofins, :v_cofins
+      attr_writer :v_bc, :p_cofins, :v_cofins
 
       def v_bc
         "%0.2f" % @v_bc
