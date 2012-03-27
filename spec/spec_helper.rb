@@ -145,7 +145,11 @@ module Nfe::Template
     end
 
     def fat
-      new_view(:fat)
+      new_view(:fat) do |v|
+        v.n_fat = "0001"
+        v.v_orig = 883.12
+        v.v_liq = 883.12
+      end
     end
 
     def prod

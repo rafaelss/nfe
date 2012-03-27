@@ -1,7 +1,7 @@
 require "spec_helper"
 
 describe Nfe::Template::Fat do
-  let(:view) { described_class.new }
+  let(:view) { fat }
 
   context "rendering" do
     subject { view.render }
