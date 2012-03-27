@@ -82,8 +82,9 @@ module Nfe::Template
       end
     end
 
-    def det
+    def det(index)
       new_view(:det) do |v|
+        v.index = index
         v.inf_ad_prod = "BLUE HEAVEN F01946 LOTE XXXX"
         v.prod = prod
         v.imposto = imposto
@@ -135,7 +136,7 @@ module Nfe::Template
         v.ide = ide
         v.emit = emit
         v.dest = dest
-        v.det = det
+        v.dets = [det(1)]
         v.total = total
         v.transp = transp
         v.cobr = cobr

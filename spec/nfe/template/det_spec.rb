@@ -1,7 +1,7 @@
 require "spec_helper"
 
 describe Nfe::Template::Det do
-  let(:view) { det }
+  let(:view) { det(1) }
 
   context "rendering" do
     subject { view.render }
