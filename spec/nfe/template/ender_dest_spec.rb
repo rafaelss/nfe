@@ -1,7 +1,7 @@
 require "spec_helper"
 
 describe Nfe::Template::EnderDest do
-  let(:view) { described_class.new }
+  let(:view) { ender_dest }
 
   context "rendering" do
     subject { view.render }
