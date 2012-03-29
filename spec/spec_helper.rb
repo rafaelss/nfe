@@ -10,8 +10,8 @@ require "nokogiri"
 require "active_support/core_ext/string"
 
 module NfeXmlComparator
-  def xml(tag, str = nil)
-    str ||= File.read(File.expand_path("../fixtures/nfe.xml", __FILE__))
+  def xml(tag, str = nil, fixture = "nfe.xml")
+    str ||= File.read(File.expand_path("../fixtures/#{fixture}", __FILE__))
     doc = Nokogiri::XML(str) do |config|
       config.noblanks
     end
@@ -57,10 +57,11 @@ module Nfe::Template
       end
     end
 
-    def dest
+    def dest(attributes = {})
       new_view(:dest) do |v|
-        v.cnpj = "02536490000170"
-        v.x_nome = "WARDY CONFECCOES LTDA"
+        v.cnpj = attributes[:cnpj] || (attributes[:cpf] ? nil : "02536490000170")
+        v.cpf = attributes[:cpf]
+        v.x_nome = attributes[:x_nome] || "WARDY CONFECCOES LTDA"
         v.ie = "115399484115"
         v.email = "wardy@wardy.com.br"
         v.ender_dest = ender_dest

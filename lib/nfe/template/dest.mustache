@@ -1,5 +1,10 @@
 <dest>
-  <CNPJ>{{cnpj}}</CNPJ>
+  {{#cnpj?}}
+    <CNPJ>{{cnpj}}</CNPJ>
+  {{/cnpj?}}
+  {{#cpf?}}
+    <CPF>{{cpf}}</CPF>
+  {{/cpf?}}
   <xNome>{{x_nome}}</xNome>
   {{{ender_dest}}}
   <IE>{{ie}}</IE>
