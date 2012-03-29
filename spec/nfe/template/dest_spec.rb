@@ -5,7 +5,7 @@ describe Nfe::Template::Dest do
     subject { view.render }
 
     describe "legal person" do
-      let(:view) { dest(:cnpj => "02536490000170") }
+      let(:view) { dest(:cnpj => "02.536.490/0001-70") }
 
       it do
         xml("dest", subject).should == xml("dest")
@@ -13,7 +13,7 @@ describe Nfe::Template::Dest do
     end
 
     describe "natural person" do
-      let(:view) { dest(:cpf => "00000000000", :x_nome => "FULANO DE TAL") }
+      let(:view) { dest(:cpf => "000.000.000-00", :x_nome => "FULANO DE TAL") }
 
       it do
         xml("dest", subject).should == xml("dest", nil, "nfe_2.xml")
