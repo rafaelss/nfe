@@ -7,6 +7,10 @@ module Nfe
         @icms.render
       end
 
+      def ipi?
+        @ipi.respond_to?(:render)
+      end
+
       def ipi
         @ipi.render
       end
