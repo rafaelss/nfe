@@ -206,7 +206,7 @@ module Nfe::Template
 
     def emit
       new_view(:emit) do |v|
-        v.cnpj = "58716523000119"
+        v.cnpj = "58.716.523.0001/19"
         v.x_nome = "FIMATEC TEXTIL LTDA"
         v.x_fant = "FIMATEC"
         v.ender_emit = ender_emit
