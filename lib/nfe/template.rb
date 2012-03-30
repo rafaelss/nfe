@@ -24,6 +24,7 @@ module Nfe
     autoload :Dup, "nfe/template/dup"
     autoload :Icms, "nfe/template/icms"
     autoload :Icms00, "nfe/template/icms00"
+    autoload :Icmssn102, "nfe/template/icmssn102"
     autoload :Ipi, "nfe/template/ipi"
     autoload :Pis, "nfe/template/pis"
     autoload :Ipint, "nfe/template/ipint"

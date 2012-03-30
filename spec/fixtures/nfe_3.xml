@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nfeProc xmlns="http://www.portalfiscal.inf.br/nfe" versao="2.00">
+  <NFe xmlns="http://www.portalfiscal.inf.br/nfe">
+    <infNFe Id="NFe43120312803527000133550010000000051062006003" versao="2.00">
+      <ide>
+        <cUF>43</cUF>
+        <cNF>06200600</cNF>
+        <natOp>Venda</natOp>
+        <indPag>1</indPag>
+        <mod>55</mod>
+        <serie>1</serie>
+        <nNF>5</nNF>
+        <dEmi>2012-03-20</dEmi>
+        <dSaiEnt>2012-03-20</dSaiEnt>
+        <hSaiEnt>15:30:00</hSaiEnt>
+        <tpNF>1</tpNF>
+        <cMunFG>4314902</cMunFG>
+        <tpImp>1</tpImp>
+        <tpEmis>1</tpEmis>
+        <cDV>3</cDV>
+        <tpAmb>1</tpAmb>
+        <finNFe>1</finNFe>
+        <procEmi>3</procEmi>
+        <verProc>2.2.0</verProc>
+      </ide>
+      <emit>
+        <CNPJ>12803527000133</CNPJ>
+        <xNome>Brace Servicos de TI LTDA</xNome>
+        <xFant>Vnda eCommerce</xFant>
+        <enderEmit>
+          <xLgr>Rua Germano Petersen Jr.</xLgr>
+          <nro>101</nro>
+          <xCpl>601</xCpl>
+          <xBairro>Higienópolis</xBairro>
+          <cMun>4314902</cMun>
+          <xMun>Porto Alegre</xMun>
+          <UF>RS</UF>
+          <CEP>90540140</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+        </enderEmit>
+        <IE>0963436902</IE>
+        <CRT>1</CRT>
+      </emit>
+      <dest>
+        <CPF>01346175098</CPF>
+        <xNome>Pedro Villeroy</xNome>
+        <enderDest>
+          <xLgr>Travessa Coronel Antonio</xLgr>
+          <nro>63</nro>
+          <xCpl>604</xCpl>
+          <xBairro>Petropolis</xBairro>
+          <cMun>4314902</cMun>
+          <xMun>Porto Alegre</xMun>
+          <UF>RS</UF>
+          <CEP>90460020</CEP>
+          <cPais>1058</cPais>
+          <xPais>BRASIL</xPais>
+        </enderDest>
+        <IE/>
+        <email>pvilleroy@hotmail.com</email>
+      </dest>
+      <det nItem="1">
+        <prod>
+          <cProd>VHL0786-05</cProd>
+          <cEAN/>
+          <xProd>Caniseta Aristoteles M Branca</xProd>
+          <NCM>61091000</NCM>
+          <CFOP>5102</CFOP>
+          <uCom>1</uCom>
+          <qCom>1.0000</qCom>
+          <vUnCom>98.0000000000</vUnCom>
+          <vProd>98.00</vProd>
+          <cEANTrib/>
+          <uTrib>1</uTrib>
+          <qTrib>1.0000</qTrib>
+          <vUnTrib>98.0000000000</vUnTrib>
+          <vFrete>7.01</vFrete>
+          <vDesc>49.00</vDesc>
+          <indTot>1</indTot>
+        </prod>
+        <imposto>
+          <ICMS>
+            <ICMSSN102>
+              <orig>0</orig>
+              <CSOSN>102</CSOSN>
+            </ICMSSN102>
+          </ICMS>
+          <PIS>
+            <PISNT>
+              <CST>07</CST>
+            </PISNT>
+          </PIS>
+          <COFINS>
+            <COFINSNT>
+              <CST>06</CST>
+            </COFINSNT>
+          </COFINS>
+        </imposto>
+      </det>
+      <total>
+        <ICMSTot>
+          <vBC>0.00</vBC>
+          <vICMS>0.00</vICMS>
+          <vBCST>0.00</vBCST>
+          <vST>0.00</vST>
+          <vProd>98.00</vProd>
+          <vFrete>7.01</vFrete>
+          <vSeg>0.00</vSeg>
+          <vDesc>49.00</vDesc>
+          <vII>0.00</vII>
+          <vIPI>0.00</vIPI>
+          <vPIS>0.00</vPIS>
+          <vCOFINS>0.00</vCOFINS>
+          <vOutro>0.00</vOutro>
+          <vNF>56.01</vNF>
+        </ICMSTot>
+      </total>
+      <transp>
+        <modFrete>0</modFrete>
+      </transp>
+    </infNFe>
+  </NFe>
+</nfeProc>

@@ -26,9 +26,16 @@ module Nfe::Template
       new_view(:icms00)
     end
 
-    def icms
+    def icmssn102
+      new_view(:icmssn102)
+    end
+
+    def icms(attributes = {})
+      attributes = { :icms00 => icms00 } if attributes.empty?
       new_view(:icms) do |v|
-        v.icms00 = icms00
+        attributes.each do |key, value|
+          v.send(:"#{key}=", value)
+        end
       end
     end
 
