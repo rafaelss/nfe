@@ -49,9 +49,12 @@ module Nfe::Template
       new_view(:ipint)
     end
 
-    def pis
+    def pis(attributes = {})
+      attributes = { :pis_aliq => pis_aliq } if attributes.empty?
       new_view(:pis) do |v|
-        v.pis_aliq = pis_aliq
+        attributes.each do |key, value|
+          v.send(:"#{key}=", value)
+        end
       end
     end
 
@@ -61,6 +64,12 @@ module Nfe::Template
         v.v_bc = 883.12
         v.p_pis = 1.65
         v.v_pis = 14.57
+      end
+    end
+
+    def pisnt
+      new_view(:pisnt) do |v|
+        v.cst = "07"
       end
     end
 
