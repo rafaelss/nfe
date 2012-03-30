@@ -12,8 +12,9 @@ module Nfe
 
     autoload :Root, "nfe/template/root"
     autoload :Cobr, "nfe/template/cobr"
-    autoload :CofinsAliq, "nfe/template/cofins_aliq"
     autoload :Cofins, "nfe/template/cofins"
+    autoload :CofinsAliq, "nfe/template/cofins_aliq"
+    autoload :Cofinsnt, "nfe/template/cofinsnt"
     autoload :Dest, "nfe/template/dest"
     autoload :Det, "nfe/template/det"
     autoload :EnderDest, "nfe/template/ender_dest"

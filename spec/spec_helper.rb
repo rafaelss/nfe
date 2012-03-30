@@ -117,9 +117,12 @@ module Nfe::Template
       end
     end
 
-    def cofins
+    def cofins(attributes = {})
+      attributes = { :cofins_aliq => cofins_aliq } if attributes.empty?
       new_view(:cofins) do |v|
-        v.cofins_aliq = cofins_aliq
+        attributes.each do |key, value|
+          v.send(:"#{key}=", value)
+        end
       end
     end
 
@@ -129,6 +132,12 @@ module Nfe::Template
         v.v_bc = 883.12
         v.p_cofins = 7.6
         v.v_cofins = 67.11
+      end
+    end
+
+    def cofinsnt
+      new_view(:cofinsnt) do |v|
+        v.cst = "06"
       end
     end
 
