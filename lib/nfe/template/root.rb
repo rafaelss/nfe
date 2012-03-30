@@ -1,11 +1,7 @@
 module Nfe
   module Template
     class Root < Base
-      attr_writer :inf_nfe
-
-      def inf_nfe
-        @inf_nfe.render
-      end
+      attr_accessor :inf_nfe
     end
   end
 end

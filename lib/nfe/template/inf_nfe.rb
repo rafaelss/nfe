@@ -1,16 +1,8 @@
 module Nfe
   module Template
     class InfNfe < Base
-      attr_accessor :id, :dets
-      attr_writer :ide, :emit, :dest, :total, :transp, :cobr, :inf_adic
-
-      def ide
-        @ide.render
-      end
-
-      def emit
-        @emit.render
-      end
+      attr_accessor :id, :ide, :emit, :dets
+      attr_writer :dest, :total, :transp, :cobr, :inf_adic
 
       def dest
         @dest.render
