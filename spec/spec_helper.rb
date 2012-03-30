@@ -250,7 +250,6 @@ module Nfe::Template
         v.tp_amb = 2
         v.fin_nfe = 1
         v.proc_emi = 3
-        v.ver_proc = "2.0.3"
       end
     end
 
