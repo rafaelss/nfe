@@ -1,7 +1,7 @@
 require "spec_helper"
 
 describe Nfe::Template::Prod do
-  let(:view) { described_class.new }
+  let(:view) { prod }
 
   context "rendering" do
     subject { view.render }

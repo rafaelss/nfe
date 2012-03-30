@@ -183,19 +183,19 @@ module Nfe::Template
         v.c_prod = "2470BCB90"
         v.c_ean = nil
         v.x_prod = "DELFOS SND TINTO COM AMACIANTE SO TECIDO 1,80M"
-        v.n_cm = 60063200
-        v.c_fop = 5122
+        v.ncm = "60063200"
+        v.cfop = 5122
         v.u_com = "KG"
         v.q_com = 46.4800
-        v.v_uncom = 19.0000000000
+        v.v_un_com = 19
         v.v_prod = 833.12
-        v.c_eantrib = nil
+        v.c_ean_trib = nil
         v.u_trib = "KG"
         v.q_trib = 46.4800
-        v.v_untrib = 19.0000000000
-        v.i_ndtot = 1
-        v.x_ped = 060110-1030
-        v.n_itemped = 1
+        v.v_un_trib = 19.0000000000
+        v.ind_tot = 1
+        v.x_ped = "060110-1030"
+        v.n_item_ped = 1
       end
     end
 
