@@ -7,6 +7,10 @@ describe Nfe::Template::Ide do
     subject { view }
 
     its(:c_nf) { should have(8).items }
+
+    it "defaults to 55 if mod is not set" do
+      described_class.new.mod.should == 55
+    end
   end
 
   context "rendering" do
