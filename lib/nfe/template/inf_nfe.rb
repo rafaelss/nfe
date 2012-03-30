@@ -34,21 +34,8 @@ module Nfe
           str << "%09d" % ide.n_nf
           str << ide.tp_emis.to_s
           str << ide.c_nf
-          str << digit(str[3..-1]).to_s
+          str << ide.c_dv.to_s
         end
-      end
-
-      protected
-
-      def digit(nfe_id)
-        sum = 0
-        nfe_id.each_char do |c|
-          [2, 3, 4, 5, 6, 7, 8, 9].each { |n| sum += c.to_i * n }
-        end
-
-        rest = sum % 11
-        return 0 if rest == 0 || rest == 1
-        11 - rest
       end
     end
   end

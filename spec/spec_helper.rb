@@ -235,6 +235,7 @@ module Nfe::Template
 
     def ide
       new_view(:ide) do |v|
+        v.nfe_id = "3510115871652300011955001000000001100300000"
         v.c_nf = "00300000"
         v.c_uf = 35
         v.nat_op = "VENDA"
@@ -247,7 +248,6 @@ module Nfe::Template
         v.c_mun_fg = 3550308
         v.tp_imp = 1
         v.tp_emis = 1
-        v.c_dv = 0
         v.tp_amb = 2
         v.fin_nfe = 1
         v.proc_emi = 3

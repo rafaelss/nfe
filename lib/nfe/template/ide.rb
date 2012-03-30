@@ -8,6 +8,17 @@ module Nfe
         @mod || 55
       end
 
+      def c_dv
+        sum = 0
+        nfe_id.each_char do |c|
+          [2, 3, 4, 5, 6, 7, 8, 9].each { |n| sum += c.to_i * n }
+        end
+
+        rest = sum % 11
+        return 0 if rest == 0 || rest == 1
+        11 - rest
+      end
+
       def ver_proc
         Nfe::VERSION
       end

@@ -6,6 +6,9 @@ describe Nfe::Template::Ide do
   context "instance" do
     subject { view }
 
+    it "returns the digit based on nf's id" do
+      subject.c_dv.should == 0
+    end
 
     it "defaults to 55 if mod is not set" do
       described_class.new.mod.should == 55
