@@ -236,7 +236,6 @@ module Nfe::Template
     def ide
       new_view(:ide) do |v|
         v.c_uf = 35
-        v.c_nf = "00300000"
         v.nat_op = "VENDA"
         v.ind_pag = 0
         v.mod = 55

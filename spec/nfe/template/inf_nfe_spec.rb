@@ -4,7 +4,7 @@ describe Nfe::Template::InfNfe do
   let(:view) { inf_nfe }
 
   before do
-    view.should_receive(:srand).and_return("00300000")
+    view.ide.should_receive(:c_nf).any_number_of_times.and_return("00300000")
   end
 
   context "instance" do

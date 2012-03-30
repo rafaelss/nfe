@@ -33,7 +33,7 @@ module Nfe
           str << "%03d" % ide.serie
           str << "%09d" % ide.n_nf
           str << ide.tp_emis.to_s
-          str << srand.to_s[0...8]
+          str << ide.c_nf
           str << digit(str[3..-1]).to_s
         end
       end

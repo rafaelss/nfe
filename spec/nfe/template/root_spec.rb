@@ -4,7 +4,7 @@ describe Nfe::Template::Root do
   let(:view) { root }
 
   before do
-    view.inf_nfe.should_receive(:srand).and_return("00300000")
+    view.inf_nfe.ide.should_receive(:c_nf).any_number_of_times.and_return("00300000")
   end
 
   context "rendering" do
