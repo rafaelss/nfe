@@ -8,6 +8,12 @@ module Nfe
         self.raise_on_context_miss = true
         super
       end
+
+      def self.tag
+        view = new
+        yield view
+        view
+      end
     end
 
     autoload :Root, "nfe/template/root"
