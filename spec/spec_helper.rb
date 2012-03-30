@@ -158,7 +158,6 @@ module Nfe::Template
 
     def inf_nfe
       new_view(:inf_nfe) do |v|
-        v.id = "NFe35101158716523000119550010000000011003000000"
         v.ide = ide
         v.emit = emit
         v.dest = dest
