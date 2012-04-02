@@ -7,6 +7,14 @@ module Nfe
       def cnpj=(value)
         @cnpj = value.gsub(/[^0-9]+/, "") if value.respond_to?(:gsub)
       end
+
+      def im?
+        im && !im.empty?
+      end
+
+      def cnae?
+        cnae && !cnae.empty?
+      end
     end
   end
 end

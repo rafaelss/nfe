@@ -7,6 +7,10 @@ module Nfe
       def obs_cont
         @obs_cont.render
       end
+
+      def inf_ad_fisco?
+        inf_ad_fisco && !inf_ad_fisco.empty?
+      end
     end
   end
 end

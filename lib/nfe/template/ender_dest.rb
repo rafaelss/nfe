@@ -7,6 +7,10 @@ module Nfe
       def cep=(value)
         @cep = value.gsub(/[^0-9]+/, "") if value.respond_to?(:gsub)
       end
+
+      def fone?
+        fone && !fone.empty?
+      end
     end
   end
 end
