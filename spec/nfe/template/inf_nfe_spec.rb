@@ -11,7 +11,11 @@ describe Nfe::Template::InfNfe do
     subject { view }
 
     its(:id) do
-      should == "NFe35101158716523000119550010000000011003000000"
+      should == "3510115871652300011955001000000001100300000"
+    end
+
+    its(:c_dv) do
+      should == "0"
     end
   end
 
