@@ -1,8 +1,12 @@
 module Nfe
   module Template
     class Prod < Base
-      attr_accessor :c_prod, :c_ean, :x_prod, :ncm, :cfop, :u_com, :v_prod, :c_ean_trib, :u_trib, :ind_tot, :x_ped, :n_item_ped
-      attr_writer :q_com, :v_un_com, :q_trib, :v_un_trib
+      attr_accessor :c_prod, :c_ean, :x_prod, :ncm, :cfop, :u_com, :c_ean_trib, :u_trib, :ind_tot, :x_ped, :n_item_ped
+      attr_writer :v_prod, :q_com, :v_un_com, :q_trib, :v_un_trib
+
+      def v_prod
+        "%0.2f" % @v_prod
+      end
 
       def q_com
         "%0.4f" % @q_com
