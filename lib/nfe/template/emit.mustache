@@ -6,7 +6,11 @@
     {{{render}}}
   {{/ender_emit}}
   <IE>{{ie}}</IE>
-  <IM>{{im}}</IM>
-  <CNAE>{{cnae}}</CNAE>
+  {{#im}}
+    <IM>{{to_s}}</IM>
+  {{/im}}
+  {{#cnae}}
+    <CNAE>{{to_s}}</CNAE>
+  {{/cnae}}
   <CRT>{{crt}}</CRT>
 </emit>

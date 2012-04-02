@@ -1,5 +1,7 @@
 <det nItem="{{index}}">
   {{{prod}}}
   {{{imposto}}}
-  <infAdProd>{{inf_ad_prod}}</infAdProd>
+  {{#inf_ad_prod}}
+    <infAdProd>{{to_s}}</infAdProd>
+  {{/inf_ad_prod}}
 </det>
