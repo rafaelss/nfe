@@ -1,8 +1,8 @@
 module Nfe
   module Template
     class IcmsTot < Base
-      attr_accessor :v_bc, :v_icms, :v_prod, :v_pis, :v_cofins, :v_nf
-      attr_writer :v_bcst, :v_st, :v_frete, :v_seg, :v_desc, :v_ii, :v_ipi, :v_outro
+      attr_accessor :v_bc, :v_icms, :v_prod, :v_pis, :v_cofins
+      attr_writer :v_bcst, :v_st, :v_frete, :v_seg, :v_desc, :v_ii, :v_ipi, :v_outro, :v_nf
 
       def v_bcst
         "%0.2f" % @v_bcst
@@ -34,6 +34,10 @@ module Nfe
 
       def v_outro
         "%0.2f" % @v_outro
+      end
+
+      def v_nf
+        "%0.2f" % @v_nf
       end
     end
   end
