@@ -31,9 +31,9 @@ module Nfe
 
       def id
         @id ||= "".tap do |str|
-          str << UFS[emit.ender_emit.uf].to_s
+          str << "%02d" % ide.c_uf
           str << Date.parse(ide.d_emi).strftime("%y%m")
-          str << emit.cnpj
+          str << emit.cnpj.gsub(/[^0-9]+/, "")
           str << "55"
           str << "%03d" % ide.serie
           str << "%09d" % ide.n_nf

@@ -204,9 +204,9 @@ module Nfe::Template
       end
     end
 
-    def emit
+    def emit(attributes = {})
       new_view(:emit) do |v|
-        v.cnpj = "58.716.523.0001/19"
+        v.cnpj = attributes[:cnpj] || "58.716.523.0001/19"
         v.x_nome = "FIMATEC TEXTIL LTDA"
         v.x_fant = "FIMATEC"
         v.ender_emit = ender_emit
@@ -233,17 +233,16 @@ module Nfe::Template
       end
     end
 
-    def ide
+    def ide(attributes = {})
       new_view(:ide) do |v|
         v.nfe_id = "3510115871652300011955001000000001100300000"
-        v.c_nf = "00300000"
         v.c_uf = 35
         v.nat_op = "VENDA"
         v.ind_pag = 0
         v.mod = 55
         v.serie = 1
-        v.n_nf = 1
-        v.d_emi = "2010-11-02"
+        v.n_nf = attributes[:n_nf] || 1
+        v.d_emi = attributes[:d_emi] || "2010-11-02"
         v.tp_nf = 1
         v.c_mun_fg = 3550308
         v.tp_imp = 1

@@ -8,14 +8,20 @@ describe Nfe::Template::InfNfe do
   end
 
   context "instance" do
-    subject { view }
+    subject do
+      view.tap do |v|
+        v.ide = ide(:d_emi => "2011-02-10", :n_nf => 7)
+        v.ide.should_receive(:c_nf).and_return("84037270")
+        v.emit = emit(:cnpj => "58.716.523.0001/19")
+      end
+    end
 
     its(:id) do
-      should == "3510115871652300011955001000000001100300000"
+      should == "3511025871652300011955001000000007184037270"
     end
 
     its(:c_dv) do
-      should == "0"
+      should == "6"
     end
   end
 
