@@ -192,6 +192,7 @@ module Nfe::Template
         v.u_trib = "KG"
         v.q_trib = 46.4800
         v.v_un_trib = 19.0000000000
+        v.v_frete = 10.00
         v.ind_tot = 1
         v.x_ped = "060110-1030"
         v.n_item_ped = 1
