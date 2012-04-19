@@ -2,7 +2,7 @@ module Nfe
   module Template
     class Prod < Base
       attr_accessor :c_prod, :c_ean, :x_prod, :ncm, :cfop, :u_com, :c_ean_trib, :u_trib, :ind_tot, :x_ped, :n_item_ped
-      attr_writer :v_prod, :q_com, :v_un_com, :q_trib, :v_un_trib, :v_frete
+      attr_writer :v_prod, :q_com, :v_un_com, :q_trib, :v_un_trib
 
       def v_prod
         "%0.2f" % @v_prod
@@ -24,7 +24,12 @@ module Nfe
         "%0.10f" % @v_un_trib
       end
 
+      def v_frete=(value)
+        @v_frete = value.to_f
+      end
+
       def v_frete
+        return nil unless @v_frete != 0
         "%0.2f" % @v_frete
       end
     end

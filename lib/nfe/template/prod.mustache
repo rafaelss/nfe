@@ -12,7 +12,9 @@
   <uTrib>{{u_trib}}</uTrib>
   <qTrib>{{q_trib}}</qTrib>
   <vUnTrib>{{v_un_trib}}</vUnTrib>
-  <vFrete>{{v_frete}}</vFrete>
+  {{#v_frete}}
+    <vFrete>{{to_s}}</vFrete>
+  {{/v_frete}}
   <indTot>{{ind_tot}}</indTot>
   {{#x_ped}}
     <xPed>{{to_s}}</xPed>
